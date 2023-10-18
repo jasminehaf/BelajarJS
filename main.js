@@ -78,3 +78,42 @@
 //     console.log(isi)
 //     p.innerHTML = isi
 // })
+
+const newTodo = document.getElementById('new-todo');
+const addTodo = document.getElementById('add-todo');
+const todoList = document.getElementById('todo-list');
+
+addTodo.addEventListener('click', () => {
+    const todoText = newTodo.value.trim();
+
+    if (todoText !== '') {
+        const todoItem = document.createElement('div');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+
+        const textSpan = document.createElement('span');
+        textSpan.textContent = todoText;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'x';
+
+        deleteButton.addEventListener('click', () => {
+            todoList.removeChild(todoItem);
+        });
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                textSpan.classList.add('completed');
+            } else {
+                textSpan.classList.remove('completed');
+            }
+        });
+
+        todoItem.appendChild(checkbox);
+        todoItem.appendChild(textSpan);
+        todoItem.appendChild(deleteButton);
+
+        todoList.appendChild(todoItem);
+        newTodo.value = '';
+    }
+});

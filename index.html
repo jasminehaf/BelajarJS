@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <!-- <form onsubmit="return false">
@@ -12,5 +17,13 @@
     </form>
     <p>Hasil Teks <span id="hasil"></span></p>
     <script src="main.js"></script> -->
+    <h1>To-do List</h1>
+   
+    <input type="text" id="new-todo" placeholder="Tambah to-do list">
+    <button id="add-todo">Submit</button>
+
+    <div id="todo-list"></div>
+
+    <script src="main.js"></script>
 </body> 
 </html>
